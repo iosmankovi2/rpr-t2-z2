@@ -5,7 +5,7 @@ package ba.unsa.etf.rpr.tutorijal02;
 class IntervalTest {
 
     @org.junit.jupiter.api.Test
-    void ctorExceptionTest() {
+    public void ctorExceptionTest() {
         assertThrows(IllegalArgumentException.class, () -> {
             Interval i = new Interval(2.5, 2.4, true, true);
         });
@@ -23,7 +23,7 @@ class IntervalTest {
         assertTrue(i.isIn(2.3));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isIn2() {
         Interval i = new Interval(1.1, 2.5, true, false);
         assertTrue(i.isIn(1.1));
@@ -60,6 +60,9 @@ class IntervalTest {
         Interval i2 = new Interval(2.2, 2.6, true, true);
         Interval i3 = Interval.intersect(i, i2);
         assertEquals("[2.2,2.5)", i3.toString());
+    }
+
+    private void assertEquals(String s, String toString) {
     }
 
     @org.junit.jupiter.api.Test
